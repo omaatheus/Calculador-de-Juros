@@ -11,7 +11,6 @@ const aplicarMascaraMoeda = (input) => {
         input.value = "";
         return;
     }
-   
     valor = (parseInt(valor) / 100).toFixed(2) + "";
     valor = valor.replace(".", ",");
     valor = valor.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Investimentos na Nuvem</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+<body>
+
+    <div class="card">
+        <div class="header">
+            <h2>Projeção de Juros Compostos</h2>
+            <p>Simule o crescimento do seu patrimônio a longo prazo</p>
+        </div>
+        
+        <div class="form-group">
+            <label for="capital">Capital Inicial (R$)</label>
+            <input type="text" id="capital" placeholder="R$ 0,00" required oninput="aplicarMascaraMoeda(this)">
+        </div>
+
+        <div class="form-group">
+            <label for="taxa">Taxa de Juros Mensal (%)</label>
+            <input type="text" id="taxa" placeholder="0,00%" required oninput="aplicarMascaraTaxa(this)">
+        </div>
+
+        <div class="form-group">
+            <label for="meses">Período de Investimento (Meses)</label>
+            <input type="number" id="meses" placeholder="Ex: 24" required>
+        </div>
+
+        <button onclick="calcularRendimento()" id="btnCalcular">Realizar Simulação</button>
+
+        <div id="boxErro" class="alert alert-error">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            <span id="txtErro">Ocorreu um erro ao processar.</span>
+        </div>
+
+        <div id="boxSucesso" class="alert alert-success">
+            <h3>Resumo da Simulação</h3>
+            <div class="result-row">
+                <span>Valor Investido:</span>
+                <span id="resCapital">R$ 0,00</span>
+            </div>
+            <div class="result-row">
+                <span>Rendimento Líquido:</span>
+                <span id="resLucro">R$ 0,00</span>
+            </div>
+            <div class="result-row highlight">
+                <span>Montante Final:</span>
+                <span id="resMontante">R$ 0,00</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
